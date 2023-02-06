@@ -32,13 +32,13 @@
 					<div class="col-xs-5">
 						<ul class="nav nav-pills">
 							<li>
-								<a href="#" onclick="set_lan(0)">English</a>
+								<a href="?lan=0" onclick="set_lan(0)">English</a>
 							</li>
 							<li id="intr">
-								<a href="#" onclick="set_lan(1)">简体中文</a>
+								<a href="?lan=1" onclick="set_lan(1)">简体中文</a>
 							</li>
 							<li id="new">
-								<a href="#" onclick="set_lan(2)">繁體中文</a>
+								<a href="?lan=2" onclick="set_lan(2)">繁體中文</a>
 							</li>
 				
 						</ul>
@@ -96,9 +96,8 @@
 		var Placeholders = ['Key in the Certificate No.'];
 		var ButtonWords = ['Submit', '确认', '確認']
 
-		var lan = 0;
-
-		set_lan(0)
+		var lan = <?php echo isset($_GET["lan"]) ? $_GET['lan'] :  0 ?>;
+		set_lan(lan)
 
 		function set_lan (lanID) {
 			lan = lanID
@@ -108,6 +107,10 @@
 			// $('#cerno').attr('placeholder', Placeholders[lan])
 			$('#submit').text(ButtonWords[lan])
 
+		}
+
+		function submit () {
+			console.log(1234)
 		}
 
 		function st_mod() {
