@@ -19,60 +19,55 @@
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/jquery.movingboxes.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		</head>
 		<style>
-		.bgimg {
-			background-image: url(./assets/top.jpg);
-		}
-	</style>
-<body>
-			<div class=" container" >
-				<div class="bs-example bgimg container" >
-<div class="col-xs-7"></div>
+			.bgimg {
+				background-image: url(./assets/top.jpg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class=" container" >
+			<div class="bs-example bgimg container" >
+				<div class="col-xs-7"></div>
 					<div class="col-xs-5">
 						<ul class="nav nav-pills">
-							
 							<li>
-								<a href="searchcer.php" onclick="handler()">English</a>
+								<a href="#" onclick="set_lan(0)">English</a>
 							</li>
 							<li id="intr">
-									<a href="javascript: return false;" onclick="modtn()">简体中文</a>
-
+								<a href="#" onclick="set_lan(1)">简体中文</a>
 							</li>
 							<li id="new">
-							<a href="javascript: return false;" onclick="moden()">繁體中文</a>
+								<a href="#" onclick="set_lan(2)">繁體中文</a>
 							</li>
 				
 						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="container">
-			
+			<div class="container" >
 				<div class="bs-example" id="search">
-<h1><a class="glyphicon glyphicon-cog overview-normalize Microsoft JhengHei "><a>Global Credential Verification</a></a></h1>
-	<div class="row">
+					<h1>
+						<a class="glyphicon glyphicon-cog overview-normalize Microsoft JhengHei ">
+							<a id="title">Global Credential Verification</a>
+						</a>
+					</h1>
+					<div class="row">
 						<div class=" col-md-8">
-
-
-					<p class="context1">
-						Please enter the Credential Identification Code
-					</p>
-
-				</div>
-				<div class=" col-md-5">
+							<p class="context1" id="hint">
+								Please enter the Credential Identification Code
+							</p>
+						</div>
+					<div class=" col-md-5">
 					<input type="text" class="form-control" id="cerno" placeholder="Key in the Certificate No." required>
 				</div>
 				<div class=" col-md-4">
-					<button class="btn btn-success btn-sm" type="submit" onclick="st_moden()">
+					<button class="btn btn-success btn-sm" type="submit" onclick="submit()" id='submit'>
 						Submit
 					</button>
 				</div>
-				<div class="col-md-12" id="static">
-
-				</div>
+				<div class="col-md-12" id="static"></div>
 			</div>
-
 		</div>
 		<div class="container">
 			<footer>
@@ -86,106 +81,130 @@
 				  GLAD® , PVQC® , PELC® , BAP® , ICT® , DMT® , MDA®, AIL® , and Typing Credential TM are trademarked by Global Learning and Assessment Development (GLAD).<br>
 		        All Logos or trademarks mentioned above belong to respective corporations.</h6>
                 </div>
-			</footer><!--footer-->
-		
+			</footer>
 		</div>
 	</body>
+	<template></template>
+	<script>
+
+		var ENG = 0;
+		var CN = 1;
+		var ZH = 2;
+		var Alerts = ['Please enter the Credential Identification Code ', '请输入证书识别编号 ', '請輸入證書識別編號 ']
+		var Titles = ['Global Credential Verification', '证书查验', '證書查驗'];
+		var Hints = ['Please enter the Credential Identification Code', '请输入证书识别编号', '請輸入證書識別編號'];
+		var Placeholders = ['Key in the Certificate No.'];
+		var ButtonWords = ['Submit', '确认', '確認']
+
+		var lan = 0;
+
+		set_lan(0)
+
+		function set_lan (lanID) {
+			lan = lanID
+
+			$('#title').text(Titles[lan])
+			$('#hint').text(Hints[lan])
+			// $('#cerno').attr('placeholder', Placeholders[lan])
+			$('#submit').text(ButtonWords[lan])
+
+		}
+
+		function st_mod() {
+			
+			var cerno = $("#cerno").val();
+		if(cerno==''){
+		alert('請輸入證書識別編號 ');
+		}
+		else{
+			var json = {
+				cerno : cerno,
+				select : 'mod'
+			}
+			$.post("glad_api.php", json, function(data) {
+				$('#static').html(data);
+				//console.log(data);
+			});
+			}
+			//$("#cerno").val("");
+			//console.log(cerno);
+		}
+		function st_moden() {
+			var cerno = $("#cerno").val();
+	if(cerno==''){
+		alert('Please enter the Credential Identification Code ');
+		}
+		else{
+			var json = {
+				cerno : cerno,
+				select : 'moden'
+			}
+			$.post("glad_api.php", json, function(data) {
+				$('#static').html(data);
+				//console.log(data);
+			});
+			}
+			//$("#cerno").val("");
+			//console.log(cerno);
+		}
+		function moden() 
+	{
+
+
+	var json={	
+		
+			select:'seachen'
+		}
+	$.post(
+		"glad_api.php", 
+		json,
+		function(data)
+			{
+			$('#search').html(data);
+			console.log(data);
+			}		
+	);
+		
+
+}
+			function modtn() 
+	{
+
+
+	var json={	
+		
+			select:'seachtn'
+		}
+	$.post(
+		"glad_api.php", 
+		json,
+		function(data)
+			{
+			$('#search').html(data);
+			console.log(data);
+			}		
+	);
+		
+
+}
+function st_modtn() {
+			var cerno = $("#cerno").val();
+	if(cerno==''){
+		alert('请输入证书识别编号 ');
+		}
+		else{
+			var json = {
+				cerno : cerno,
+				select : 'modtn'
+			}
+			$.post("glad_api.php", json, function(data) {
+				$('#static').html(data);
+				//console.log(data);
+			});
+			}
+			//$("#cerno").val("");
+			//console.log(cerno);
+		}
+</script>
+
 </html>
-		<script>
-			function st_mod() {
-				
-				var cerno = $("#cerno").val();
-           if(cerno==''){
-           	alert('請輸入證書識別編號 ');
-           }
-           else{
-				var json = {
-					cerno : cerno,
-					select : 'mod'
-				}
-				$.post("glad_api.php", json, function(data) {
-					$('#static').html(data);
-					//console.log(data);
-				});
-				}
-				//$("#cerno").val("");
-				//console.log(cerno);
-			}
-			function st_moden() {
-				var cerno = $("#cerno").val();
-  		if(cerno==''){
-           	alert('Please enter the Credential Identification Code ');
-           }
-           else{
-				var json = {
-					cerno : cerno,
-					select : 'moden'
-				}
-				$.post("glad_api.php", json, function(data) {
-					$('#static').html(data);
-					//console.log(data);
-				});
-				}
-				//$("#cerno").val("");
-				//console.log(cerno);
-			}
-			function moden() 
-	 	{
-
-	
-		var json={	
-			
-				select:'seachen'
-			}
-		$.post(
-			"glad_api.php", 
-			json,
-   			function(data)
-   				{
-   				$('#search').html(data);
-   				console.log(data);
-   				}		
-   		);
-   			
-
-   	}
-   				function modtn() 
-	 	{
-
-	
-		var json={	
-			
-				select:'seachtn'
-			}
-		$.post(
-			"glad_api.php", 
-			json,
-   			function(data)
-   				{
-   				$('#search').html(data);
-   				console.log(data);
-   				}		
-   		);
-   			
-
-   	}
-   	function st_modtn() {
-				var cerno = $("#cerno").val();
- 		if(cerno==''){
-           	alert('请输入证书识别编号 ');
-           }
-           else{
-				var json = {
-					cerno : cerno,
-					select : 'modtn'
-				}
-				$.post("glad_api.php", json, function(data) {
-					$('#static').html(data);
-					//console.log(data);
-				});
-				}
-				//$("#cerno").val("");
-				//console.log(cerno);
-			}
-		</script>
-
