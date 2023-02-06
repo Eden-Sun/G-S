@@ -7,7 +7,6 @@
 		<meta name="keywords" content="GLAD,PVQC,BAP,專業英文">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 		<link href="string.css" rel="stylesheet">
 		<title>Global Learning and Assessment Development (GLAD) - PVQC VQC BAP Typing</title>
 		<link rel="shortcut icon" href="favicon.ico" />
@@ -23,7 +22,7 @@
 		</head>
 		<style>
 		.bgimg {
-			background-image: url(top.jpg);
+			background-image: url(./assets/top.jpg);
 		}
 	</style>
 <body>
@@ -78,7 +77,7 @@
 		<div class="container">
 			<footer>
 				<div class="context">
-					<h5><img src="footer.jpg" /></h5>
+					<h5><img src="./assets/footer.jpg" /></h5>
 					<h6 class="year_date">Copyright©  GLAD  All rights reserved.</h6>
                   <h6 class="year_date">Microsoft®,  Word,  Excel®,  PowerPoint®  and Office are trademarks of Microsoft Inc. in the United States and/or other countries.<br>
 				  CIW® is the trademark of Certification Partners, LLC. CompTIA® is the trademark of Computing Technology Industry Association, Inc. <br>
