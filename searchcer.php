@@ -66,7 +66,60 @@
 						Submit
 					</button>
 				</div>
-				<div class="col-md-12" id="static"></div>
+				<div class="col-md-12" id="static">
+					<div id="noresult">
+						<div>not exist</div>
+						<div>查无编号</div>
+						<div>查無此編號</div>
+					</div>
+					<table class="table table-striped" id="result">
+						<thead >
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Certification</th>
+							<th>Level</th>
+							<th>Tier</th>
+							<th>Spelling</th>
+							<th>Issued on</th>
+						</thead>
+						<thead>
+							<th>英文姓名</th>
+							<th>中文姓名</th>
+							<th>科目</th>
+							<th>Level(等級)</th>
+							<th>Tier(層級)</th>
+							<th>Spelling</th>
+							<th>發證日期</th>
+						</thead>
+						<thead>
+							<th>英文姓名</th>
+							<th>中文姓名</th>
+							<th>科目</th>
+							<th>Level(等級)</th>
+							<th>Tier(層級)</th>
+							<th>Spelling</th>
+							<th>發證日期</th>
+						</thead>
+						<tbody> 
+							<tr id="tr">
+								<!-- <td>'.$row[0].'</td>
+								<td>'.$row[1].'</td>
+								<td>'.$row[10].'-'.$row[3].'</td>
+								<td>'.$row[4].'</td>
+								<td>'.$row[5].'</td>          
+								<td>'.$row[7].'</td>
+								<td>'.$row[9].'</td>              -->
+							</tr>
+						</tbody>
+					</table>
+					<form method="POST" action="'.$row[15].'.php" target="_blank">
+
+					<input type="password" name="password" class="hidden" value="'.$cerno.'">
+
+					<button class="btn btn-primary btn-xs" type="submit">顯示書子證書</button>
+					<button class="btn btn-primary btn-xs" ">下載</button>
+					</form>
+				</div>
 			</div>
 		</div>
 		<div class="container">
@@ -104,110 +157,41 @@
 
 			$('#title').text(Titles[lan])
 			$('#hint').text(Hints[lan])
-			// $('#cerno').attr('placeholder', Placeholders[lan])
 			$('#submit').text(ButtonWords[lan])
 
+			$('#result thead,tbody').hide()
+			$('#noresult div').hide()
 		}
 
 		function submit () {
-			console.log(1234)
-		}
-
-		function st_mod() {
-			
 			var cerno = $("#cerno").val();
-		if(cerno==''){
-		alert('請輸入證書識別編號 ');
-		}
-		else{
-			var json = {
-				cerno : cerno,
-				select : 'mod'
+			if(cerno=='') { 
+				return alert(Alerts[lan]);
 			}
-			$.post("glad_api.php", json, function(data) {
-				$('#static').html(data);
-				//console.log(data);
+			$.post("api.php", { cerno: cerno }).then(function(data) {
+				var result = JSON.parse(data)
+				$('#result thead,tbody').hide()
+				$('#noresult div').hide()
+				if (!result.length) {
+					$($('#noresult div')[lan]).show()
+					return 
+				}
+				$($('#result thead')[lan]).show()
+				$('#result tbody').show()
+				$('#tr')
+					.append($('<td>').text(result[0]))
+					.append($('<td>').text(result[1]))
+					.append($('<td>').text(result[10] + '-' + result[3]))
+					.append($('<td>').text(result[4]))
+
+					.append($('<td>').text(result[5]))
+
+					.append($('<td>').text(result[7]))
+					.append($('<td>').text(result[9]))
 			});
-			}
-			//$("#cerno").val("");
-			//console.log(cerno);
 		}
-		function st_moden() {
-			var cerno = $("#cerno").val();
-	if(cerno==''){
-		alert('Please enter the Credential Identification Code ');
-		}
-		else{
-			var json = {
-				cerno : cerno,
-				select : 'moden'
-			}
-			$.post("glad_api.php", json, function(data) {
-				$('#static').html(data);
-				//console.log(data);
-			});
-			}
-			//$("#cerno").val("");
-			//console.log(cerno);
-		}
-		function moden() 
-	{
 
-
-	var json={	
 		
-			select:'seachen'
-		}
-	$.post(
-		"glad_api.php", 
-		json,
-		function(data)
-			{
-			$('#search').html(data);
-			console.log(data);
-			}		
-	);
-		
-
-}
-			function modtn() 
-	{
-
-
-	var json={	
-		
-			select:'seachtn'
-		}
-	$.post(
-		"glad_api.php", 
-		json,
-		function(data)
-			{
-			$('#search').html(data);
-			console.log(data);
-			}		
-	);
-		
-
-}
-function st_modtn() {
-			var cerno = $("#cerno").val();
-	if(cerno==''){
-		alert('请输入证书识别编号 ');
-		}
-		else{
-			var json = {
-				cerno : cerno,
-				select : 'modtn'
-			}
-			$.post("glad_api.php", json, function(data) {
-				$('#static').html(data);
-				//console.log(data);
-			});
-			}
-			//$("#cerno").val("");
-			//console.log(cerno);
-		}
 </script>
 
 </html>
