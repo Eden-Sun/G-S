@@ -1,0 +1,83 @@
+.pvqcname {
+	font-style: italic;
+	font-family: "Verdana";
+	font-size: 45px;
+	text-align: center;
+	font-weight: bold;
+}
+.pvqcnamect {
+	font-style: italic;
+	font-family: "SimSun";
+	font-size: 45px;
+	text-align: center;
+	font-weight: bold;
+}
+.pvqcdate {
+
+	font-family: "Verdana";
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+}
+.pvqccer {
+
+	font-family: "Verdana";
+	font-size: 25px;
+	text-align: center;
+	font-weight: bold;
+}
+.pvqcctir {
+
+	font-family: "Verdana";
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+}
+.pvqcnum {
+	font-family: "Verdana";
+	font-size: 12px;
+	text-align: left;
+	
+}
+.ictname {
+	font-family: "Microsoft JhengHei ";
+	font-size: 40px;
+	text-align: center;
+	font-weight: bold;
+}
+.ictdate {
+	font-family: "Microsoft JhengHei";
+	font-size: 24px;
+	text-align: center;
+	font-weight: bold;
+}
+.ictcer {
+
+	font-family: "Microsoft JhengHei";
+	font-size: 34px;
+	text-align: center;
+		font-weight: bold;
+}
+.tcdate {
+
+	font-family: "Verdana";
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+}
+.bapdate {
+	font-family: "Microsoft JhengHei";
+	font-size: 24px;
+	text-align: center;
+}
+.mid{
+	text-align: center;
+	
+}
+.tccer {
+
+	font-family: "Verdana";
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+}

@@ -16,9 +16,10 @@
 		<link rel="stylesheet" href="dist/css/docs.min.css">
 		<link href="string.css" rel="stylesheet">
 		<link type="text/css" href="css/style.css" rel="stylesheet">
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/jquery.movingboxes.js"></script>
+		<!-- <script type="text/javascript" src="js/jquery.js"></script> -->
+		<!-- <script type="text/javascript" src="js/jquery.movingboxes.js"></script> -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script type="text/javascript" src="dist/js/bootstrap.js"></script>
 		<style>
 			.bgimg {
 				background-image: url(./assets/top.jpg);
@@ -87,9 +88,9 @@
 							<th>中文姓名</th>
 							<th>科目</th>
 							<th>Level(等級)</th>
-							<th>Tier(層級)</th>
+							<th>Tier(层级)</th>
 							<th>Spelling</th>
-							<th>發證日期</th>
+							<th>发证日期</th>
 						</thead>
 						<thead>
 							<th>英文姓名</th>
@@ -102,23 +103,24 @@
 						</thead>
 						<tbody> 
 							<tr id="tr">
-								<!-- <td>'.$row[0].'</td>
-								<td>'.$row[1].'</td>
-								<td>'.$row[10].'-'.$row[3].'</td>
-								<td>'.$row[4].'</td>
-								<td>'.$row[5].'</td>          
-								<td>'.$row[7].'</td>
-								<td>'.$row[9].'</td>              -->
 							</tr>
 						</tbody>
 					</table>
-					<form method="POST" action="'.$row[15].'.php" target="_blank">
+					<form method="POST" id="show_form" action="./cert.php" target="_blank">
+						<input type="password" name="password" class="hidden" id="password" value="'.$cerno.'">
 
-					<input type="password" name="password" class="hidden" value="'.$cerno.'">
-
-					<button class="btn btn-primary btn-xs" type="submit">顯示書子證書</button>
-					<button class="btn btn-primary btn-xs" ">下載</button>
+						<button class="btn btn-primary btn-xs" type="submit">顯示書子證書</button>
+						<button class="btn btn-primary btn-xs" ">下載</button>
 					</form>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+					<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+						...
+						</div>
+					</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -137,7 +139,6 @@
 			</footer>
 		</div>
 	</body>
-	<template></template>
 	<script>
 
 		var ENG = 0;
@@ -182,12 +183,13 @@
 					.append($('<td>').text(result[0]))
 					.append($('<td>').text(result[1]))
 					.append($('<td>').text(result[10] + '-' + result[3]))
+
 					.append($('<td>').text(result[4]))
-
 					.append($('<td>').text(result[5]))
-
 					.append($('<td>').text(result[7]))
 					.append($('<td>').text(result[9]))
+				// $('#show_form').attr('action', './pre/' + result[15] + '.php')
+				$('#password').val(cerno)
 			});
 		}
 
