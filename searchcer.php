@@ -27,6 +27,9 @@
 			.inline-form {
 				display: inline;
 			}
+			iframe {
+				border: 0;
+			}
 		</style>
 	</head>
 	<body>
@@ -117,8 +120,8 @@
 						<input type="password" name="password" class="hidden" value="">
 						<button class="btn btn-primary btn-xs">下載</button>
 					</form>
-					<iframe name="my_iframe" width=0px height=0px></iframe>
 				</div>
+				<iframe name="my_iframe" width=0px height=0px></iframe>
 			</div>
 		</div>
 		<div class="container">
@@ -145,7 +148,9 @@
 		var Titles = ['Global Credential Verification', '证书查验', '證書查驗'];
 		var Hints = ['Please enter the Credential Identification Code', '请输入证书识别编号', '請輸入證書識別編號'];
 		var Placeholders = ['Key in the Certificate No.'];
-		var ButtonWords = ['Submit', '确认', '確認']
+		var Button_Search_Words = ['Submit', '确认', '確認']
+		var Button_View_Words = ['View the online copy of the certificate.', '点击此处可查看在线证书的副本。', '顯示書子證書']
+		var Button_Download_Words = ['Download', '下载', '下載']
 
 		var lan = <?php echo isset($_GET["lan"]) ? $_GET['lan'] :  0 ?>;
 		set_lan(lan)
@@ -155,10 +160,12 @@
 
 			$('#title').text(Titles[lan])
 			$('#hint').text(Hints[lan])
-			$('#submit').text(ButtonWords[lan])
+			$('#submit').text(Button_Search_Words[lan])
 
-			$('#result thead,tbody').hide()
+			$('#result').hide()
+			$('#result thead').hide()
 			$('#noresult div').hide()
+			$('form').hide()
 		}
 
 		function submit () {
@@ -168,14 +175,17 @@
 			}
 			$.post("api.php", { cerno: cerno }).then(function(data) {
 				var result = JSON.parse(data)
-				$('#result thead,tbody').hide()
+				$('#result').hide()
+				$('#result thead').hide()
 				$('#noresult div').hide()
+				$('form').hide()
 				if (!result.length) {
 					$($('#noresult div')[lan]).show()
 					return 
 				}
+				$('form').show()
 				$($('#result thead')[lan]).show()
-				$('#result tbody').show()
+				$('#result').show()
 				$('#tr')
 					.append($('<td>').text(result[0]))
 					.append($('<td>').text(result[1]))
