@@ -114,11 +114,11 @@
 					</table>
 					<form method="POST" class="inline-form" id="show_form" action="./cert.php" target="_blank">
 						<input type="password" name="password" class="hidden" value="">
-						<button class="btn btn-primary btn-xs" type="submit">顯示書子證書</button>
+						<button class="btn btn-primary btn-xs" id="btn_view">顯示書子證書</button>
 					</form>
 					<form method="POST" class="inline-form" action="./cert.php?download=1"  target="my_iframe">
 						<input type="password" name="password" class="hidden" value="">
-						<button class="btn btn-primary btn-xs">下載</button>
+						<button class="btn btn-primary btn-xs" id="btn_download">下載</button>
 					</form>
 				</div>
 				<iframe name="my_iframe" width=0px height=0px></iframe>
@@ -161,6 +161,8 @@
 			$('#title').text(Titles[lan])
 			$('#hint').text(Hints[lan])
 			$('#submit').text(Button_Search_Words[lan])
+			$('#btn_view').text(Button_View_Words[lan])
+			$('#btn_download').text(Button_Download_Words[lan])
 
 			$('#result').hide()
 			$('#result thead').hide()
