@@ -24,6 +24,9 @@
 			.bgimg {
 				background-image: url(./assets/top.jpg);
 			}
+			.inline-form {
+				display: inline;
+			}
 		</style>
 	</head>
 	<body>
@@ -106,21 +109,15 @@
 							</tr>
 						</tbody>
 					</table>
-					<form method="POST" id="show_form" action="./cert.php" target="_blank">
-						<input type="password" name="password" class="hidden" id="password" value="'.$cerno.'">
-
+					<form method="POST" class="inline-form" id="show_form" action="./cert.php" target="_blank">
+						<input type="password" name="password" class="hidden" value="">
 						<button class="btn btn-primary btn-xs" type="submit">顯示書子證書</button>
-						<button class="btn btn-primary btn-xs" ">下載</button>
 					</form>
-					<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
-					<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-					<div class="modal-dialog modal-lg" role="document">
-						<div class="modal-content">
-						...
-						</div>
-					</div>
-					</div>
-
+					<form method="POST" class="inline-form" action="./cert.php?download=1"  target="my_iframe">
+						<input type="password" name="password" class="hidden" value="">
+						<button class="btn btn-primary btn-xs">下載</button>
+					</form>
+					<iframe name="my_iframe" width=0px height=0px></iframe>
 				</div>
 			</div>
 		</div>
@@ -189,7 +186,7 @@
 					.append($('<td>').text(result[7]))
 					.append($('<td>').text(result[9]))
 				// $('#show_form').attr('action', './pre/' + result[15] + '.php')
-				$('#password').val(cerno)
+				$('input[name="password"]').val(cerno)
 			});
 		}
 
