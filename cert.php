@@ -8,16 +8,11 @@
 		<meta name="keywords" content="GLAD,PVQC,BAP,專業英文">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
-		<link href="string.css" rel="stylesheet">
-		<title>Global Learning and Assessment Development (GLAD) - PVQC VQC BAP Typing</title>
 		<link rel="shortcut icon" href="favicon.ico" />
+		<link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+		<title>Global Learning and Assessment Development (GLAD) - PVQC VQC BAP Typing</title>
 		<link href="dist/css/bootstrap.css" rel="stylesheet">
-		<link rel="stylesheet" href="dist/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="dist/css/bootstrap.min.css">
-		<link rel="stylesheet" href="dist/css/docs.min.css">
-		<link href="string.css" rel="stylesheet">
-		<link type="text/css" href="cert.css" rel="stylesheet">
+		<link href="cert.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
 	</head>
