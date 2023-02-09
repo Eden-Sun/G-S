@@ -11,7 +11,7 @@
 		<link rel="shortcut icon" href="favicon.ico" />
 		<link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
 		<title>Global Learning and Assessment Development (GLAD) - PVQC VQC BAP Typing</title>
-		<link href="dist/css/bootstrap.css" rel="stylesheet">
+		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="cert.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>

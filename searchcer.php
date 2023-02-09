@@ -7,17 +7,18 @@
 		<meta name="keywords" content="GLAD,PVQC,BAP,專業英文">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link href="string.css" rel="stylesheet">
 		<title>Global Learning and Assessment Development (GLAD) - PVQC VQC BAP Typing</title>
-
+		
 		<link rel="shortcut icon" href="favicon.ico" />
-		<link href="dist/css/bootstrap.css">
-		<link href="dist/css/bootstrap-theme.min.css">
-		<link href="dist/css/docs.min.css">
-		<!-- <link type="text/css" href="css/style.css"> -->
+		
+		<link rel="stylesheet" href="string.css" >
+		<link rel="stylesheet" href="css/bootstrap.css" >
+		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="css/docs.min.css">
+		<link rel="stylesheet" href="css/style.css" >
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
 		<style>
 			.bgimg {
 				background-image: url(./assets/top.jpg);
