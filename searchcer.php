@@ -189,6 +189,7 @@
 				$($('#result thead')[lan]).show()
 				$('#result').show()
 				$('#tr')
+					.empty()
 					.append($('<td>').text(result[0]))
 					.append($('<td>').text(result[1]))
 					.append($('<td>').text(result[10] + '-' + result[3]))
