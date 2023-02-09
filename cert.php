@@ -37,11 +37,11 @@
 		// 		if (navigator.appName == "Microsoft Internet Explorer"){
 		// 		if (event.button != 1){alert("Not available to download!!");
 		// return false;}}}
-
+		var contentWidth = $($(document.body).children()[0]).width()
 		var opt = {
 			filename:     '<? echo $cerno ?>.pdf',
 			image:        { type: 'jpeg', quality: 0.98 },
-			html2canvas:  { scale: 2, width: 1285, y:-2 },
+			html2canvas:  { scale: 2, width: contentWidth, y:0 },
 			jsPDF:        { unit: 'in', format: 'letter', orientation: 'l' }
 		};
 		$(document).ready(function(){
