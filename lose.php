@@ -24,6 +24,9 @@
 			.bgimg {
 				background-image: url(./assets/top.jpg);
 			}
+			iframe {
+				border: 0;
+			}
 		</style>
 	</head>
 	<body>
@@ -47,7 +50,7 @@
 					</div>
 				</div>
 				<div id="main">
-					<button class="btn btn-info btn-sm" onclick="meth1en()">
+					<button class="btn btn-info btn-sm" onclick="method1()">
 						Method One
 					</button>
 					<button class="btn btn-info btn-sm" onclick="meth2en()">
@@ -116,7 +119,7 @@
 						</h1>
 						<div class="row ">
 							<div class=" col-md-8">
-								<p class="context">Please select your certificate category</p>
+								<p class="context" id="cat_title">Please select your certificate category</p>
 								<select id="cat" class="form-control ">
 									<option value="pvqc">PVQC</option>
 									<option value="vqc">VQC</option>
@@ -125,6 +128,12 @@
 									<option value="jvqc">JVQC</option>
 									<option value="mda">MDA</option>
 								</select>
+								<!-- <select id="aioConceptName" class="form-control ">
+									<option value="bap">BAP</option>
+									<option value="ict">ICT</option>
+									<option value="dmt">DMT</option>
+									<option value="ail">AIL</option>
+								</select> -->
 							</div>
 							<div class=" col-md-8">
 								<p class="context" id="ident_title">
@@ -141,11 +150,51 @@
 								<input type="text" class="form-control" id="account" placeholder="Key in the account." required>
 							</div>
 							<div class="col-md-7">
-								<button class="btn btn-success btn-sm" type="submit" onclick="st_moden()">Submit</button>
+								<button class="btn btn-success btn-sm" id="submit" onclick="submit()">Submit</button>
 							</div>
-							<div class="col-md-12" id="static">
-
-							</div>
+							<iframe name="my_iframe" width=0px height=0px></iframe>
+							<form method="POST" action="./cert.php?download=1"  target="my_iframe">
+								<input type="password" name="password" id="password" class="hidden" value="">
+								<div class="col-md-12" id="static">
+									<table class="table table-striped">
+										<thead>
+											<th>First Name</th>
+											<th>Last Name</th>
+											<th>Certification</th>
+											<th>Level</th>
+											<th>Tier</th>
+											<th>Spelling</th>
+											<th>Certification Number</th>
+											<th>Issued on</th>
+											<th>Download</th>
+										</thead>
+										<thead>
+											<th>英文姓名</th>
+											<th>中文姓名</th>
+											<th>科目</th>
+											<th>Level(等级)</th>
+											<th>Tier(层级)</th>
+											<th>Spelling</th>
+											<th>认证码</th>
+											<th>发证日期</th>
+											<th>下载</th>
+										</thead>
+										<thead>
+											<th>英文姓名</th>
+											<th>中文姓名</th>
+											<th>科目</th>
+											<th>Level(等級)</th>
+											<th>Tier(層級)</th>
+											<th>Spelling</th>
+											<th>認證碼</th>
+											<th>發證日期</th>
+											<th>下載</th>
+										</thead>
+										<tbody id="tbody">
+										</tbody>
+									</table>
+								</div>
+							</form>
 						</div>
 					</div> 
 				</div>
@@ -172,7 +221,6 @@
 		var ENG = 0;
 		var CN = 1;
 		var ZH = 2;
-		// var Alerts = ['Please enter the Credential Identification Code ', '请输入证书识别编号 ', '請輸入證書識別編號 ']
 		var Titles = ['Lost or missing certificates inquiry', '证书遗失查询', '證書遺失查詢'];
 		var Cat_titles = ['Please select your certificate category', '请选择证书类别', '請選擇證書類別'];
 		
@@ -181,223 +229,76 @@
 		// var Iden_hints = []
 		var Acc_titles = ['Please enter the certificate’s registration account', '请输入参加本认证之注册账号', '請輸入參加本認證之註冊帳號']
 		// var Acc_hints = []
-
+		
 		var Button_Search_Words = ['Submit', '确认', '確認']
 		var Button_View_Words = ['View the online copy of the certificate.', '点击此处可查看在线证书的副本。', '顯示書子證書']
 		var Button_Download_Words = ['Download', '下载', '下載']
-
+		
+		var Alerts = ['Please enter complete information', '请输入完整数据 ', '請輸入完整資料 ']
 
 		var lan = <?php echo isset($_GET["lan"]) ? $_GET['lan'] :  0 ?>;
+		
 		set_lan(lan)
-
 		function set_lan (lanID) {
 			lan = lanID
+			
+			$('.query').hide()
+			$('.instruction').hide()
+			$($('.instruction')[lan]).show()
 			$('#title').text(Titles[lan])
+			$('#cat_title').text(Cat_titles[lan])
+			$('#ident_title').text(Iden_titles[lan])
+			$('#account_title').text(Acc_titles[lan])
+			$('#submit').text(Button_View_Words[lan])
+
+		}
+		$('thead').hide()
+
+		function method1 () {
+			$('.instruction').hide()
+			$('.query').show()
+		}
+		function method2 () {}
+
+		function submit () {
+			var ident = $("#ident").val();
+			var account = $("#account").val();
+			var cat_key = $('#cat').val();
+			if (ident == '' || account == '') {
+				alert(Alerts[lan]);
+			} else {
+				$.post("./api.php", {
+					cat: cat_key,
+					ident : ident,
+					email : account,
+				}, function(data) {
+					// $('#static').html(data);
+					var results = JSON.parse(data)
+					console.log(results);
+					$('#tbody').empty()
+					$($('thead')[lan]).show()
+					results.forEach(function(result) {
+						var bt_btn = $('<button>')
+							.addClass('btn btn-primary btn-xs')
+							.text(Button_Download_Words[lan])
+							.click(function () {
+								$('#password').val(result[8])
+							})
+						var tr = $('<tr>')
+						tr
+							.append($('<td>').text(result[0]))
+							.append($('<td>').text(result[1]))
+							.append($('<td>').text(result[10] + '-' + result[3]))
+							.append($('<td>').text(result[4]))
+							.append($('<td>').text(result[5]))
+							.append($('<td>').text(result[7]))
+							.append($('<td>').text(result[8]))
+							.append($('<td>').text(result[9]))
+							.append($('<td>').append(bt_btn))
+						$('#tbody').append(tr)
+					})
+				});
+			}
 		}
 	</script>
 </html>
-
-<script>
-	function meth1() {
-		var json = {
-			select : 'meth1'
-		}
-		$.post("glad_api.php", json, function(data) {
-			$('#stage').html(data);
-			console.log(data);
-		});
-	}
-		function meth1cn() {
-		var json = {
-			select : 'meth1cn'
-		}
-		$.post("glad_api.php", json, function(data) {
-			$('#stage').html(data);
-			console.log(data);
-		});
-	}
-
-	function meth2() {
-		var json = {
-			select : 'meth2'
-		}
-		$.post("glad_api.php", json, function(data) {
-			$('#stage').html(data);
-			console.log(data);
-		});
-	}
-		function meth2cn() {
-		var json = {
-			select : 'meth2cn'
-		}
-		$.post("glad_api.php", json, function(data) {
-			$('#stage').html(data);
-			console.log(data);
-		});
-	}
-
-	function st_mod() {
-		var idno = $("#idno").val();
-		var account = $("#account").val();
-		var aioConceptName = $('#aioConceptName').val();
-		if (idno == '' || account == '') {
-			alert('請輸入完整資料');
-		} else {
-			var json = {
-				idno : idno,
-				account : account,
-				aioConceptName : aioConceptName,
-				select : 'lose'
-			}
-			$.post("glad_api.php", json, function(data) {
-				$('#static').html(data);
-				console.log(data);
-			});
-		}
-
-	}
-	function st_modcn() {
-		var idno = $("#idno").val();
-		var account = $("#account").val();
-		var aioConceptName = $('#aioConceptName').val();
-		if (idno == '' || account == '') {
-			alert('請輸入完整資料');
-		} else {
-			var json = {
-				idno : idno,
-				account : account,
-				aioConceptName : aioConceptName,
-				select : 'losecn'
-			}
-			$.post("glad_api.php", json, function(data) {
-				$('#static').html(data);
-				console.log(data);
-			});
-		}
-
-	}
-
-	function st_mod2() {
-		var idno = $("#idno").val();
-		var account = $("#account").val();
-		var aioConceptName = $('#aioConceptName').val();
-		if (idno == '' || account == '') {
-			alert('请输入完整数据');
-		} else {
-			var json = {
-				idno : idno,
-				account : account,
-				aioConceptName : aioConceptName,
-				select : 'lose2'
-			}
-			$.post("glad_api.php", json, function(data) {
-				$('#static').html(data);
-				console.log(data);
-			})
-		};
-		//$("#idno").val("");
-		//$("#account	").val("");
-	}
-	function st_mod2cn() {
-		var idno = $("#idno").val();
-		var account = $("#account").val();
-		var aioConceptName = $('#aioConceptName').val();
-		if (idno == '' || account == '') {
-			alert('请输入完整数据');
-		} else {
-			var json = {
-				idno : idno,
-				account : account,
-				aioConceptName : aioConceptName,
-				select : 'lose2cn'
-			}
-			$.post("glad_api.php", json, function(data) {
-				$('#static').html(data);
-				console.log(data);
-			})
-		};
-		//$("#idno").val("");
-		//$("#account	").val("");
-	}
-	function modenl(){
-	var json = {
-
-		select : 'modenlose'
-	}
-	$.post("glad_api.php", json, function(data) {
-		$('#manters').html(data);
-		console.log(data);
-	});
-
-	}
-	function modcnl() {
-		var json = {
-
-			select : 'modcnlose'
-		}
-		$.post("glad_api.php", json, function(data) {
-			$('#manters').html(data);
-			console.log(data);
-		});
-	}
-		function meth1en() {
-		var json = {
-			select : 'meth1en'
-		}
-		$.post("glad_api.php", json, function(data) {
-			$('#stage').html(data);
-			console.log(data);
-		});
-	}
-		function meth2en() {
-		var json = {
-			select : 'meth2en'
-		}
-		$.post("glad_api.php", json, function(data) {
-			$('#stage').html(data);
-			console.log(data);
-		});
-	}
-		function st_mod2en() {
-		var idno = $("#idno").val();
-		var account = $("#account").val();
-		var aioConceptName = $('#aioConceptName').val();
-		if (idno == '' || account == '') {
-			alert('Please enter complete information');
-		} else {
-			var json = {
-				idno : idno,
-				account : account,
-				aioConceptName : aioConceptName,
-				select : 'lose2en'
-			}
-			$.post("glad_api.php", json, function(data) {
-				$('#static').html(data);
-				console.log(data);
-			})
-		};
-		//$("#idno").val("");
-		//$("#account	").val("");
-	}
-	function st_moden() {
-		var idno = $("#idno").val();
-		var account = $("#account").val();
-		var aioConceptName = $('#aioConceptName').val();
-		if (idno == '' || account == '') {
-			alert('Please enter complete information');
-		} else {
-			var json = {
-				idno : idno,
-				account : account,
-				aioConceptName : aioConceptName,
-				select : 'loseen'
-			}
-			$.post("glad_api.php", json, function(data) {
-				$('#static').html(data);
-				console.log(data);
-			})
-		};
-		//$("#idno").val("");
-		//$("#account	").val("");
-	}
-</script>
