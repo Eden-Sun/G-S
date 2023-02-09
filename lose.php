@@ -120,7 +120,7 @@
 						<div class="row ">
 							<div class=" col-md-8">
 								<p class="context" id="cat_title">Please select your certificate category</p>
-								<select id="cat" class="form-control ">
+								<select id="cat_id" class="form-control">
 									<option value="pvqc">PVQC</option>
 									<option value="vqc">VQC</option>
 									<option value="Typing Credential">Typing Credential</option>
@@ -128,12 +128,12 @@
 									<option value="jvqc">JVQC</option>
 									<option value="mda">MDA</option>
 								</select>
-								<!-- <select id="aioConceptName" class="form-control ">
+								<select id="cat_bir" class="form-control">
 									<option value="bap">BAP</option>
 									<option value="ict">ICT</option>
 									<option value="dmt">DMT</option>
 									<option value="ail">AIL</option>
-								</select> -->
+								</select>
 							</div>
 							<div class=" col-md-8">
 								<p class="context" id="ident_title">
@@ -239,6 +239,7 @@
 		var Alerts = ['Please enter complete information', '请输入完整数据 ', '請輸入完整資料 ']
 
 		var lan = <?php echo isset($_GET["lan"]) ? $_GET['lan'] :  0 ?>;
+		var id_mode = 1;
 		
 		set_lan(lan)
 		function set_lan (lanID) {
@@ -257,21 +258,26 @@
 		$('thead').hide()
 
 		function method (idMode) {
+			id_mode = idMode
 			$('.instruction').hide()
 			$('.query').show()
-			if (idMode) {
+			if (id_mode) {
 				$('#ident').attr('placeholder', 'Key in the id.')
 				$('#ident_title').text(Iden_titles[lan][0])
+				$('#cat_id').show()
+				$('#cat_bir').hide()
 			} else {
 				$('#ident').attr('placeholder', 'Key in the birthday.')
 				$('#ident_title').text(Iden_titles[lan][1])
+				$('#cat_id').hide()
+				$('#cat_bir').show()
 			}
 		}
 
 		function submit () {
 			var ident = $("#ident").val();
 			var account = $("#account").val();
-			var cat_key = $('#cat').val();
+			var cat_key = id_mode ? $('#cat_id').val() : $('#cat_bir').val();
 			if (ident == '' || account == '') {
 				alert(Alerts[lan]);
 			} else {
