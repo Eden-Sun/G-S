@@ -1,5 +1,5 @@
 
-		<div style="background-image:url(./assets/DMT_ONLINECOPY.jpg);no-repeat;position: relative;width:1285px;height:990px; solid black;float: left;" rel="imgtip[0]">
+		<div style="background-image:url(./certs/DMT_ONLINECOPY.jpg);no-repeat;position: relative;width:1285px;height:990px; solid black;float: left;" rel="imgtip[0]">
 		
 			<p style=" padding:380px 0px 0px 0px;"class="ictname">
 				<?echo $rows[0];?>

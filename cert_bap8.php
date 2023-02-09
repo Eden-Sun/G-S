@@ -1,5 +1,5 @@
 
-		<div style="background-image:url(./assets/P-ALLMASTER.jpg);no-repeat;position: relative;width:1404px;height:993px; solid black;float: left;" rel="imgtip[0]">
+		<div style="background-image:url(./certs/P-ALLMASTER.jpg);no-repeat;position: relative;width:1404px;height:993px; solid black;float: left;" rel="imgtip[0]">
 		
 			<p style="padding:410px 0px 0px 0px;"class="ictname">
 				<?echo $rows[0];?>

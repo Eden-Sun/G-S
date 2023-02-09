@@ -9,15 +9,13 @@
 		<meta name="author" content="">
 		<link href="string.css" rel="stylesheet">
 		<title>Global Learning and Assessment Development (GLAD) - PVQC VQC BAP Typing</title>
+
 		<link rel="shortcut icon" href="favicon.ico" />
-		<link href="dist/css/bootstrap.css" rel="stylesheet">
-		<link rel="stylesheet" href="dist/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="dist/css/bootstrap.min.css">
-		<link rel="stylesheet" href="dist/css/docs.min.css">
-		<link href="string.css" rel="stylesheet">
-		<link type="text/css" href="css/style.css" rel="stylesheet">
-		<!-- <script type="text/javascript" src="js/jquery.js"></script> -->
-		<!-- <script type="text/javascript" src="js/jquery.movingboxes.js"></script> -->
+		<link href="dist/css/bootstrap.css">
+		<link href="dist/css/bootstrap-theme.min.css">
+		<link href="dist/css/docs.min.css">
+		<!-- <link type="text/css" href="css/style.css"> -->
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script type="text/javascript" src="dist/js/bootstrap.js"></script>
 		<style>
