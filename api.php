@@ -15,7 +15,7 @@
 		$email=$_POST['email'];
 		$cat=$_POST['cat'];
 		$data=mysql_query("select * from   info where (ID ='$ident' or bir ='$ident') and cert='$cat' and email='$email'") ;
-		$results = [];
+		$results = array();
 		while($row= mysql_fetch_row($data)) {
 			array_push($results, $row);
 		};
