@@ -232,7 +232,6 @@
 		var Acc_titles = ['Please enter the certificate’s registration account', '请输入参加本认证之注册账号', '請輸入參加本認證之註冊帳號']
 		
 		var Button_Search_Words = ['Submit', '确认', '確認']
-		var Button_View_Words = ['View the online copy of the certificate.', '点击此处可查看在线证书的副本。', '顯示書子證書']
 		var Button_Download_Words = ['Download', '下载', '下載']
 		
 		var Alerts = ['Please enter complete information', '请输入完整数据 ', '請輸入完整資料 ']
@@ -251,7 +250,7 @@
 			$('#cat_title').text(Cat_titles[lan])
 			$('#ident_title').text(Iden_titles[lan])
 			$('#account_title').text(Acc_titles[lan])
-			$('#submit').text(Button_View_Words[lan])
+			$('#submit').text(Button_Search_Words[lan])
 
 		}
 		$('thead').hide()
