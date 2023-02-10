@@ -64,7 +64,7 @@
 						<a class="glyphicon glyphicon-th">
 						</a>Method One:</h4>
 						<br>
-						<h5><a href="javascript: return false;"style="color:#0000C6" onclick="method(1)">【Method One】</a>is for certificates of PVQC,VQC,Typing Credential,PELC,JVQC,MDA.  After selecting your certificate category, enter the last five digits of your identification number, and then enter the certificate’s registration account for complete inquiry.</h5>
+						<h5><a href="javascript: return false;"style="color:#0000C6" onclick="method(1)">【Method One】</a>is for certificates of PVQC,VQC,Typing Credential,PELC,JVQC,MDA,GQC.  After selecting your certificate category, enter the last five digits of your identification number, and then enter the certificate’s registration account for complete inquiry.</h5>
 						</br>
 						<h4>
 						<a class="glyphicon glyphicon-th">
@@ -83,7 +83,7 @@
 							查询方式一
 						</p></h4>
 						<br>
-						<h5>适用于证书PVQC、VQC、Typing Credential、PELC、JVQC、MDA遗失查询使用，请先按上方<a href="javascript: return false;" style="color:#0000C6" onclick="method(1)">【查询方式一】</a>，选取欲查询之证书类别，再输入身分证后五码，接者输入参加本认证之注册账号完成查询步骤。</h5>
+						<h5>适用于证书PVQC、VQC、Typing Credential、PELC、JVQC、MDA、GQC遗失查询使用，请先按上方<a href="javascript: return false;" style="color:#0000C6" onclick="method(1)">【查询方式一】</a>，选取欲查询之证书类别，再输入身分证后五码，接者输入参加本认证之注册账号完成查询步骤。</h5>
 						<br>
 						<h4>
 						<p class="glyphicon glyphicon-th">
@@ -102,7 +102,7 @@
 							查詢方式一:
 						</p></h4>
 						<br>
-						<h5>適用於證書PVQC、VQC、Typing Credential、PELC、JVQC、MDA遺失查詢使用，請先按上方<a href="javascript: return false;" style="color:#0000C6" onclick="method(1)">【查詢方式一】</a>，選取欲查詢之證書類別，再輸入身分證後五碼，接者輸入參加本認證之註冊帳號完成查詢步驟。</h5>
+						<h5>適用於證書PVQC、VQC、Typing Credential、PELC、JVQC、MDA、GQC遺失查詢使用，請先按上方<a href="javascript: return false;" style="color:#0000C6" onclick="method(1)">【查詢方式一】</a>，選取欲查詢之證書類別，再輸入身分證後五碼，接者輸入參加本認證之註冊帳號完成查詢步驟。</h5>
 						<br>
 						<h4>
 						<p class="glyphicon glyphicon-th">
@@ -126,6 +126,7 @@
 									<option value="pelc">PELC</option>
 									<option value="jvqc">JVQC</option>
 									<option value="mda">MDA</option>
+									<option value="gqc">GQC</option>
 								</select>
 								<select id="cat_bir" class="form-control">
 									<option value="bap">BAP</option>
