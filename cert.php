@@ -27,25 +27,28 @@
 		?>
 	</body>
 	<script>
-		// document.onmousedown=click;
-		// document.onkeydown=click;
-		// if (document.layers) window.captureEvents(Event.MOUSEDOWN); window.onmousedown=click;
-		// if (document.layers) window.captureEvents(Event.KEYDOWN); window.onkeydown=click;
-		// function click(e){
-		// 	if (navigator.appName == 'Netscape'){
-		// 		if (e.which != 1){alert("Not available to download!!");return false;}}
-		// 		if (navigator.appName == "Microsoft Internet Explorer"){
-		// 		if (event.button != 1){alert("Not available to download!!");
-		// return false;}}}
-		var contentWidth = $($(document.body).children()[0]).width()
-		var opt = {
-			filename:     '<? echo $cerno ?>.pdf',
-			image:        { type: 'jpeg', quality: 0.98 },
-			html2canvas:  { scale: 2, width: contentWidth, y:0 },
-			jsPDF:        { unit: 'in', format: 'letter', orientation: 'l' }
-		};
+		document.onmousedown=click;
+		document.onkeydown=click;
+		if (document.layers) window.captureEvents(Event.MOUSEDOWN); window.onmousedown=click;
+		if (document.layers) window.captureEvents(Event.KEYDOWN); window.onkeydown=click;
+		function click(e){
+			if (navigator.appName == 'Netscape'){
+				if (e.which != 1){alert("Not available to download!!");return false;}}
+				if (navigator.appName == "Microsoft Internet Explorer"){
+				if (event.button != 1){alert("Not available to download!!");
+		return false;}}}
+		
 		$(document).ready(function(){
-			if (/download/.test(window.location.search)) html2pdf(document.body, opt)
+			var pdfContent = $(document.body).children()[0]
+			var pdfWidth = $(pdfContent).width()
+			var pdfHeight = $(pdfContent).height()
+			var orientationKey = pdfWidth > pdfHeight ? 'l' : 'p'
+			var opt = {
+				filename:     '<? echo $cerno ?>.pdf',
+				html2canvas:  { width: pdfWidth },
+				jsPDF:        { unit: 'px', format: [pdfWidth, pdfHeight], orientation: orientationKey }
+			};
+			if (/download/.test(window.location.search)) html2pdf(pdfContent, opt)
 		})
 	</script>
 </html>
