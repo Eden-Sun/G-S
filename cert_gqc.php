@@ -1,7 +1,7 @@
 
 <div style="background-image:url(./certs/GQC_ONLINECOPY.jpg);no-repeat;position: relative;width:1285px;height:990px; solid black;float: left;" rel="imgtip[0]">
 
-	<p style=" padding:410px 0px 0px 0px;"class="mid">
+	<p style=" padding:385px 0px 0px 0px;"class="mid">
 		<b class="pvqcname"><?echo $rows[0];?></b>
 		<b class="pvqcnamect"><?echo $rows[1];?></b>
 	</p>
@@ -13,7 +13,7 @@
 	<p style=" padding:80px 0px 0px 0px;" class="pvqccer">
 		
 	</p>
-	<p style=" padding:0px 0px 0px 0px;"class="pvqcctir">
+	<p style=" padding:15px 0px 0px 0px;"class="pvqcctir">
 		<?echo $rows[4]."-".$rows[5];?>
 		<br>
 		<?echo $rows[6].$rows[7];?>
