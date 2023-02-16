@@ -8,7 +8,7 @@
 		<?echo $rows[13];?>
 	</p>
 		
-	<p style=" padding:90px 0px 0px 0px;" class="pvqccer">
+	<p style=" padding:100px 0px 0px 0px;" class="pvqccer">
 		English Vocabulary Quotient in <?echo $rows[3];?>
 	</p>
 	<p style=" padding:0px 0px 0px 0px;"class="pvqcctir">
