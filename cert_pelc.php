@@ -6,7 +6,7 @@
 		<b class="pvqcnamect"><?echo $rows[1];?></b>
 	</p>
 	
-	<p style=" padding:30px 0px 0px 0px;"class="pvqcdate">
+	<p style=" padding:25px 0px 0px 0px;"class="pvqcdate">
 		<?echo $rows[13];?>
 	</p>
 	
@@ -19,7 +19,7 @@
 		<?echo $rows[6].$rows[7];?>
 	</p>
 	<h4 class="pvqcnum">
-	<p style=" padding:180px 0px 0px 1030px;">
+	<p style=" padding:190px 0px 0px 1030px;">
 		<?echo $rows[8];?>
 	</p></h4>
 </div>
