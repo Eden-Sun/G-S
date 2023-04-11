@@ -61,7 +61,7 @@
 					<div class="row">
 						<div class=" col-md-8">
 							<p class="context1" id="hint">
-								Please enter the Credential Identification Code
+								Please enter the Certificate Identification Code
 							</p>
 						</div>
 					<div class=" col-md-5">
@@ -133,7 +133,7 @@
 				  ATP and all other trademarks mentioned above belong to the respective organization(s) which own(s) the rights.<br>
 				  Adobe® , Photoshop®, Illustrator® and InDesign® are either registered trademarks or trademarks of Adobe® Systems. <br>
 				  GLAD® , PVQC® , PELC® , BAP® , ICT® , DMT® , MDA®, AIL® , and Typing Credential TM are trademarked by Global Learning and Assessment Development (GLAD).<br>
-		        All Logos or trademarks mentioned above belong to respective corporations.</h6>
+		        All logos or trademarks mentioned above belong to their respective corporations.</h6>
                 </div>
 			</footer>
 		</div>
