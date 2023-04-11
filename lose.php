@@ -58,20 +58,20 @@
 					<div class="bs-example instruction">
 						<h2>
 						<p class="title1">
-							Instruction: Click on the buttons above for corresponding inquiry methods
+							Instruction: Click on the buttons above to choose the inquiry method
 						</p></h2>
 						<h4>
 						<a class="glyphicon glyphicon-th">
 						</a>Method One:</h4>
 						<br>
-						<h5><a href="javascript: return false;"style="color:#0000C6" onclick="method(1)">【Method One】</a>is for certificates of PVQC,VQC,Typing Credential,PELC,JVQC,MDA,GQC.  After selecting your certificate category, enter the last five digits of your identification number, and then enter the certificate’s registration account for complete inquiry.</h5>
+						<h5><a href="javascript: return false;"style="color:#0000C6" onclick="method(1)">【Method One】</a>is for certificates of PVQC,VQC,Typing Credential, PELC, JVQC, MDA, GQC.  After selecting your certificate category, enter the last five digits of your government identification number, and then enter the email address you registered with.</h5>
 						</br>
 						<h4>
 						<a class="glyphicon glyphicon-th">
 							
 						</a>Method Two:</h4>
 						<br>
-						<h5><a href="javascript: return false;" style="color:#0000C6" onclick="method(0)">【Method Two】</a> is for certificates of BAP,ICT,DMT,AIL.  After selecting your certificate category, enter your year and month of birth (e.g. 1990/08), and then enter the certificate’s registration account for complete inquiry.</h5>
+						<h5><a href="javascript: return false;" style="color:#0000C6" onclick="method(0)">【Method Two】</a> is for certificates of BAP, ICT, DMT, AIL. After selecting your certificate category, enter your year and month of birth (e.g. 2006/08), and then enter the Email address you registered with.</h5>
 					</div>
 					<div class="bs-example instruction">
 						<h2>
@@ -144,10 +144,10 @@
 								<input type="text" class="form-control" id="ident" required>
 							</div>
 							<div class=" col-md-8">
-								<p class="context" id="account_title">Please enter the certificate’s registration account</p>
+								<p class="context" id="account_title">Please enter the Email address you registered with.</p>
 							</div>
 							<div class="col-md-8">
-								<input type="text" class="form-control" id="account" placeholder="Key in the account." required>
+								<input type="text" class="form-control" id="account" placeholder="Key in the Email address you registered with." required>
 							</div>
 							<div class="col-md-7">
 								<button class="btn btn-success btn-sm" id="submit" onclick="submit()">Submit</button>
@@ -210,7 +210,7 @@
 						ATP and all other trademarks mentioned above belong to the respective organization(s) which own(s) the rights.<br>
 						Adobe® , Photoshop®, Illustrator® and InDesign® are either registered trademarks or trademarks of Adobe® Systems. <br>
 						GLAD® , PVQC® , PELC® , BAP® , ICT® , DMT® , MDA®, AIL® , and Typing Credential TM are trademarked by Global Learning and Assessment Development (GLAD).</span><br>
-						All Logos or trademarks mentioned above belong to respective corporations.</h6>
+						All logos or trademarks mentioned above belong to their respective corporations.</h6>
 					</div>
 				</footer><!--footer-->
 			</div>
@@ -261,12 +261,12 @@
 			$('.instruction').hide()
 			$('.query').show()
 			if (id_mode) {
-				$('#ident').attr('placeholder', 'Key in the id.')
+				$('#ident').attr('placeholder', 'Key in the last five digits of your ID.')
 				$('#ident_title').text(Iden_titles[lan][0])
 				$('#cat_id').show()
 				$('#cat_bir').hide()
 			} else {
-				$('#ident').attr('placeholder', 'Key in the birthday.')
+				$('#ident').attr('placeholder', 'Key in your birthday.')
 				$('#ident_title').text(Iden_titles[lan][1])
 				$('#cat_id').hide()
 				$('#cat_bir').show()
