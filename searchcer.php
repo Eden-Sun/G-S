@@ -61,7 +61,7 @@
 					<div class="row">
 						<div class=" col-md-8">
 							<p class="context1" id="hint">
-								Please enter the Credential Identification Code
+								Please enter the Certificate Identification Code
 							</p>
 						</div>
 					<div class=" col-md-5">
@@ -132,8 +132,8 @@
 				  CIW® is the trademark of Certification Partners, LLC. CompTIA® is the trademark of Computing Technology Industry Association, Inc. <br>
 				  ATP and all other trademarks mentioned above belong to the respective organization(s) which own(s) the rights.<br>
 				  Adobe® , Photoshop®, Illustrator® and InDesign® are either registered trademarks or trademarks of Adobe® Systems. <br>
-				  GLAD® , PVQC® , PELC® , BAP® , ICT® , DMT® , MDA®, AIL® , and Typing Credential TM are trademarked by Global Learning and Assessment Development (GLAD).<br>
-		        All Logos or trademarks mentioned above belong to respective corporations.</h6>
+				  GLAD® , PVQC® , PELC® , BAP® , ICT® , DMT® , MDA®, AIL®, GQC®, and Typing Credential TM are trademarked by Global Learning and Assessment Development (GLAD).<br>
+		        All logos or trademarks mentioned above belong to their respective corporations.</h6>
                 </div>
 			</footer>
 		</div>
@@ -143,9 +143,9 @@
 		var ENG = 0;
 		var CN = 1;
 		var ZH = 2;
-		var Alerts = ['Please enter the Credential Identification Code ', '请输入证书识别编号 ', '請輸入證書識別編號 ']
+		var Alerts = ['Please enter the Certificate Identification Code ', '请输入证书识别编号 ', '請輸入證書識別編號 ']
 		var Titles = ['Global Credential Verification', '证书查验', '證書查驗'];
-		var Hints = ['Please enter the Credential Identification Code', '请输入证书识别编号', '請輸入證書識別編號'];
+		var Hints = ['Please enter the Certificate Identification Code', '请输入证书识别编号', '請輸入證書識別編號'];
 		var Placeholders = ['Key in the Certificate No.'];
 		var Button_Search_Words = ['Submit', '确认', '確認']
 		var Button_View_Words = ['View the online copy of the certificate.', '点击此处可查看在线证书的副本。', '顯示書子證書']
