@@ -132,7 +132,7 @@
 				  CIW® is the trademark of Certification Partners, LLC. CompTIA® is the trademark of Computing Technology Industry Association, Inc. <br>
 				  ATP and all other trademarks mentioned above belong to the respective organization(s) which own(s) the rights.<br>
 				  Adobe® , Photoshop®, Illustrator® and InDesign® are either registered trademarks or trademarks of Adobe® Systems. <br>
-				  GLAD® , PVQC® , PELC® , BAP® , ICT® , DMT® , MDA®, AIL® , and Typing Credential TM are trademarked by Global Learning and Assessment Development (GLAD).<br>
+				  GLAD® , PVQC® , PELC® , BAP® , ICT® , DMT® , MDA®, AIL®, GQC®, and Typing Credential TM are trademarked by Global Learning and Assessment Development (GLAD).<br>
 		        All logos or trademarks mentioned above belong to their respective corporations.</h6>
                 </div>
 			</footer>
