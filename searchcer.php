@@ -143,9 +143,9 @@
 		var ENG = 0;
 		var CN = 1;
 		var ZH = 2;
-		var Alerts = ['Please enter the Credential Identification Code ', '请输入证书识别编号 ', '請輸入證書識別編號 ']
+		var Alerts = ['Please enter the Certificate Identification Code ', '请输入证书识别编号 ', '請輸入證書識別編號 ']
 		var Titles = ['Global Credential Verification', '证书查验', '證書查驗'];
-		var Hints = ['Please enter the Credential Identification Code', '请输入证书识别编号', '請輸入證書識別編號'];
+		var Hints = ['Please enter the Certificate Identification Code', '请输入证书识别编号', '請輸入證書識別編號'];
 		var Placeholders = ['Key in the Certificate No.'];
 		var Button_Search_Words = ['Submit', '确认', '確認']
 		var Button_View_Words = ['View the online copy of the certificate.', '点击此处可查看在线证书的副本。', '顯示書子證書']
