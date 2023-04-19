@@ -230,7 +230,7 @@
 			['請輸入身分證字號後五碼', '請輸入生日西元年月(ex 1990/08)']
 		]
 			
-		var Acc_titles = ['Please enter the certificate’s registration account', '请输入参加本认证之注册账号', '請輸入參加本認證之註冊帳號']
+		var Acc_titles = ['Please enter the Email address your registered with', '请输入参加本认证之注册账号', '請輸入參加本認證之註冊帳號']
 		
 		var Button_Search_Words = ['Submit', '确认', '確認']
 		var Button_Download_Words = ['Download', '下载', '下載']
