@@ -238,7 +238,7 @@
 		var Alerts = ['Please enter complete information', '请输入完整数据 ', '請輸入完整資料 ']
 
 		var lan = <?php echo isset($_GET["lan"]) ? $_GET['lan'] :  0 ?>;
-		var id_mode = 1;s
+		var id_mode = 1;
 		
 		set_lan(lan)
 		function set_lan (lanID) {
