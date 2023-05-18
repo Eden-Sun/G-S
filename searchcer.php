@@ -130,10 +130,10 @@
 					<h6 class="year_date">Copyright©  GLAD  All rights reserved.</h6>
                   <h6 class="year_date">Microsoft®,  Word,  Excel®,  PowerPoint®  and Office are trademarks of Microsoft Inc. in the United States and/or other countries.<br>
 				  CIW® is the trademark of Certification Partners, LLC. CompTIA® is the trademark of Computing Technology Industry Association, Inc. <br>
-				  ATP and all other trademarks mentioned above belong to the respective organization(s) which own(s) the rights.<br>
+				  ATP is a registered trademark of the Association of Test Publishers. And all other trademarks mentioned above belong to the respective organization(s) which own(s) the rights.<br>
 				  Adobe® , Photoshop®, Illustrator® and InDesign® are either registered trademarks or trademarks of Adobe® Systems. <br>
-				  GLAD® , PVQC® , PELC® , BAP® , ICT® , DMT® , MDA®, AIL®, GQC®, and Typing Credential TM are trademarked by Global Learning and Assessment Development (GLAD).<br>
-		        All logos or trademarks mentioned above belong to their respective corporations.</h6>
+				  	GLAD® , PVQC® , PELC® , GQC®, BAP® , ICT® , DMT® , MDA®, AIL®  and Typing Credential® are trademarked by Global Learning and Assessment Development (GLAD).</span><br>
+						All logos or trademarks mentioned above belong to their organization(s).</h6>
                 </div>
 			</footer>
 		</div>
