@@ -113,7 +113,7 @@
 					</table>
 					<form method="POST" class="inline-form" id="show_form" action="./cert.php" target="_blank">
 						<input type="password" name="password" class="hidden" value="">
-						<button class="btn btn-primary btn-xs" id="btn_view">顯示書子證書</button>
+						<button class="btn btn-primary btn-xs" id="btn_view">顯示電子證書</button>
 					</form>
 					<form method="POST" class="inline-form" action="./cert.php?download=1"  target="my_iframe">
 						<input type="password" name="password" class="hidden" value="">

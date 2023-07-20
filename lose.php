@@ -114,7 +114,7 @@
 					<div class="bs-example query">
 						<h1>
 							<a class="glyphicon glyphicon-cog overview-normalize"></a>
-							<a id="title">Lost or missing certificates inquiry</a>
+							<a id="title">certificates inquiry</a>
 						</h1>
 						<div class="row ">
 							<div class=" col-md-8">
@@ -221,7 +221,7 @@
 		var ENG = 0;
 		var CN = 1;
 		var ZH = 2;
-		var Titles = ['Lost or missing certificates inquiry', '证书遗失查询', '證書遺失查詢'];
+		var Titles = ['certificates inquiry', '证书查询', '證書查詢'];
 		var Cat_titles = ['Please select your certificate category', '请选择证书类别', '請選擇證書類別'];
 		
 		var Iden_titles = [
