@@ -71,7 +71,7 @@
 							
 						</a>Method Two:</h4>
 						<br>
-						<h5><a href="javascript: return false;" style="color:#0000C6" onclick="method(0)">【Method Two】</a> is for certificates of BAP, ICT, DMT, AIL. After selecting your certificate category, enter your year and month of birth (e.g. 2006/08), and then enter the Email address you registered with.</h5>
+						<h5><a href="javascript: return false;" style="color:#0000C6" onclick="method(0)">【Method Two】</a> is for certificates of BAP, ICT, DMT, AIL. After selecting your certificate category, enter year and month of birth (e.g. 2006/08), and then enter the Email address you registered with.</h5>
 					</div>
 					<div class="bs-example instruction">
 						<h2>
@@ -114,7 +114,7 @@
 					<div class="bs-example query">
 						<h1>
 							<a class="glyphicon glyphicon-cog overview-normalize"></a>
-							<a id="title">Lost or missing certificates inquiry</a>
+							<a id="title">certificates inquiry</a>
 						</h1>
 						<div class="row ">
 							<div class=" col-md-8">
@@ -207,10 +207,10 @@
 
 						<h6><span style="font-family: Arial, Helvetica, sans-serif">Microsoft®,  Word,  Excel®,  PowerPoint®  and Office are trademarks of Microsoft Inc. in the United States and/or other countries.<br>
 						CIW® is the trademark of Certification Partners, LLC. CompTIA® is the trademark of Computing Technology Industry Association, Inc. <br>
-						ATP and all other trademarks mentioned above belong to the respective organization(s) which own(s) the rights.<br>
+						ATP is a registered trademark of the Association of Test Publishers. And all other trademarks mentioned above belong to the respective organization(s) which own(s) the rights.<br>
 						Adobe® , Photoshop®, Illustrator® and InDesign® are either registered trademarks or trademarks of Adobe® Systems. <br>
-						GLAD® , PVQC® , PELC® , BAP® , ICT® , DMT® , MDA®, AIL® , and Typing Credential TM are trademarked by Global Learning and Assessment Development (GLAD).</span><br>
-						All logos or trademarks mentioned above belong to their respective corporations.</h6>
+						GLAD® , PVQC® , PELC® , GQC®, BAP® , ICT® , DMT® , MDA®, AIL®  and Typing Credential® are trademarked by Global Learning and Assessment Development (GLAD).</span><br>
+						All logos or trademarks mentioned above belong to their organization(s).</h6>
 					</div>
 				</footer><!--footer-->
 			</div>
@@ -221,16 +221,16 @@
 		var ENG = 0;
 		var CN = 1;
 		var ZH = 2;
-		var Titles = ['Lost or missing certificates inquiry', '证书遗失查询', '證書遺失查詢'];
+		var Titles = ['Certificates Inquiry', '证书查询', '證書查詢'];
 		var Cat_titles = ['Please select your certificate category', '请选择证书类别', '請選擇證書類別'];
 		
 		var Iden_titles = [
-			['Please enter your last five digits of your identification number', 'Please enter your year and month of birth (e.g. 1990/08)'],
+			['Please enter your last five digits of your identification number', 'Please enter year and month of birth (e.g. 1990/08)'],
 			['请输入身分证字号后五码', '请输入公元生日(ex 1990/08)'],
 			['請輸入身分證字號後五碼', '請輸入生日西元年月(ex 1990/08)']
 		]
 			
-		var Acc_titles = ['Please enter the Email address your registered with', '请输入参加本认证之注册账号', '請輸入參加本認證之註冊帳號']
+		var Acc_titles = ['Please enter the Email address you registered with', '请输入参加本认证之注册账号', '請輸入參加本認證之註冊帳號']
 		
 		var Button_Search_Words = ['Submit', '确认', '確認']
 		var Button_Download_Words = ['Download', '下载', '下載']
@@ -266,7 +266,7 @@
 				$('#cat_id').show()
 				$('#cat_bir').hide()
 			} else {
-				$('#ident').attr('placeholder', 'Key in your birthday.')
+				$('#ident').attr('placeholder', 'Key in year and month of birth.')
 				$('#ident_title').text(Iden_titles[lan][1])
 				$('#cat_id').hide()
 				$('#cat_bir').show()
