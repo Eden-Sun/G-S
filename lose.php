@@ -83,14 +83,14 @@
 							查询方式一
 						</p></h4>
 						<br>
-						<h5>适用于证书PVQC、VQC、Typing Credential、PELC、JVQC、MDA、GQC遗失查询使用，请先按上方<a href="javascript: return false;" style="color:#0000C6" onclick="method(1)">【查询方式一】</a>，选取欲查询之证书类别，再输入身分证后五码，接者输入参加本认证之注册账号完成查询步骤。</h5>
+						<h5>适用于证书PVQC、VQC、Typing Credential、PELC、JVQC、MDA、GQC查询使用，请先按上方<a href="javascript: return false;" style="color:#0000C6" onclick="method(1)">【查询方式一】</a>，选取欲查询之证书类别，再输入身分证后五码，接者输入参加本认证之注册账号完成查询步骤。</h5>
 						<br>
 						<h4>
 						<p class="glyphicon glyphicon-th">
 							查询方式二:
 						</p></h4>
 						<br>
-						<h5>适用于证书BAP、ICT、DMT、AIL等遗失查询使用，请先按上方<a href="javascript: return false;" style="color:#0000C6" onclick="method(0)">【查询方式二】</a>，选取欲查询之证书类别，再输入生日公元年月(ex 1990/08/02)，接者输入参加本认证之注册账号完成查询步骤。</h5>
+						<h5>适用于证书BAP、ICT、DMT、AIL等查询使用，请先按上方<a href="javascript: return false;" style="color:#0000C6" onclick="method(0)">【查询方式二】</a>，选取欲查询之证书类别，再输入生日公元年月(ex 1990/08/02)，接者输入参加本认证之注册账号完成查询步骤。</h5>
 					</div>
 					<div class="bs-example instruction">
 						<h2>
@@ -102,14 +102,14 @@
 							查詢方式一:
 						</p></h4>
 						<br>
-						<h5>適用於證書PVQC、VQC、Typing Credential、PELC、JVQC、MDA、GQC遺失查詢使用，請先按上方<a href="javascript: return false;" style="color:#0000C6" onclick="method(1)">【查詢方式一】</a>，選取欲查詢之證書類別，再輸入身分證後五碼，接者輸入參加本認證之註冊帳號完成查詢步驟。</h5>
+						<h5>適用於證書PVQC、VQC、Typing Credential、PELC、JVQC、MDA、GQC查詢使用，請先按上方<a href="javascript: return false;" style="color:#0000C6" onclick="method(1)">【查詢方式一】</a>，選取欲查詢之證書類別，再輸入身分證後五碼，接者輸入參加本認證之註冊帳號完成查詢步驟。</h5>
 						<br>
 						<h4>
 						<p class="glyphicon glyphicon-th">
 							查詢方式二:
 						</p></h4>
 						<br>
-						<h5>適用於證書BAP、ICT、DMT、AIL等遺失查詢使用，請先按上方<a href="javascript: return false;" style="color:#0000C6" onclick="method(0)">【查詢方式二】</a>，選取欲查詢之證書類別，再輸入生日西元年月(ex 1990/08)，接者輸入參加本認證之註冊帳號完成查詢步驟。</h5>
+						<h5>適用於證書BAP、ICT、DMT、AIL等查詢使用，請先按上方<a href="javascript: return false;" style="color:#0000C6" onclick="method(0)">【查詢方式二】</a>，選取欲查詢之證書類別，再輸入生日西元年月(ex 1990/08)，接者輸入參加本認證之註冊帳號完成查詢步驟。</h5>
 					</div>
 					<div class="bs-example query">
 						<h1>
